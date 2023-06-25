@@ -1,5 +1,4 @@
 from kafka import KafkaConsumer
-import json
 
 consumer = KafkaConsumer(
         'TWITTER_SENTIMENT_TOPIC',
@@ -9,7 +8,6 @@ consumer = KafkaConsumer(
         group_id='my-group2',
         value_deserializer=lambda x: x.decode('utf-8'))
 
-# Define the aggregated results dictionary
 aggregated_results = {
     'positive': 0,
     'neutral': 0,
