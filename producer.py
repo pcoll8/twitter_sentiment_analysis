@@ -4,12 +4,12 @@ from random import randint
 import pandas as pd
 from kafka import KafkaProducer
 
+from variables.config import KAFKA_TOPIC_1, PRODUCER_PORT
 
 if __name__ == "__main__":
-    KAFKA_TOPIC_1 = "TWEETS_TO_ANALYZE"
 
     producer = KafkaProducer(
-        bootstrap_servers='localhost:9092', api_version=(2, 0, 2))
+        bootstrap_servers=f'localhost:{PRODUCER_PORT}', api_version=(2, 0, 2))
 
     df = pd.read_csv('data/tweets.csv', header=None, verbose=True, sep=",", index_col=False, engine="python",
                      encoding='latin-1')

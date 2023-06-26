@@ -3,3 +3,4 @@ pandas
 transformers~=4.30.2
 torch
 xformers
+confluent_kafka
